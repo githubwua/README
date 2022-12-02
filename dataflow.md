@@ -1,7 +1,8 @@
 # QUICKSTART
 
+Get [sample code](https://github.com/apache/beam/tree/master/examples/java) first:
+
 ```bash
-# Create a playground
 mvn archetype:generate \
     -DarchetypeGroupId=org.apache.beam \
     -DarchetypeArtifactId=beam-sdks-java-maven-archetypes-examples \
@@ -11,14 +12,25 @@ mvn archetype:generate \
     -Dversion="0.1" \
     -Dpackage=org.apache.beam.examples \
     -DinteractiveMode=false
-    
-# Run wordcount example locally with Direct Runner
+
+cd word-count-beam
+```
+
+Various ways to run the same wordcount quickstart demo:
+
+```bash
+# Example1: Use Dataflow Runner to run wordcount example with default arguments
+mvn compile exec:java \
+      -Dexec.mainClass=org.apache.beam.examples.WordCount \
+      -Dexec.args="--output=output/wordcount"
+      
+# Example2: Use Direct Runner to run wordcount example locally
 mvn compile exec:java \
   -Dexec.mainClass=org.apache.beam.examples.WordCount \
   -Dexec.args="--inputFile=/var/log/README --output=output/counts" \
   -Pdirect-runner
 
-# Use remote Dataflow Runner to run wordcount example
+# Example3: Use Dataflow Runner to run wordcount example with custom arguments
 mvn compile exec:java \
   -Dexec.mainClass=org.apache.beam.examples.WordCount \
   -Dexec.args="--gcpTempLocation=gs://BUCKET/staging/ \
