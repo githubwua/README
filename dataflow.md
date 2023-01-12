@@ -48,5 +48,5 @@ Ref:  https://beam.apache.org/get-started/quickstart-java/
 
 ## Sample Code Examples
 
-https://github.com/GoogleCloudPlatform/DataflowTemplates
-https://github.com/apache/beam/tree/master/examples
+- https://github.com/GoogleCloudPlatform/DataflowTemplates
+- https://github.com/apache/beam/tree/master/examples
